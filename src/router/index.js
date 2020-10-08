@@ -165,19 +165,19 @@ export const constantRouterMap = [
     component: Layout,
     redirect: '/teacher/list',
     name: 'Teacher',
-    meta: { title: '讲师管理' },
+    meta: { title: '讲师管理', icon: 'example' },
     children: [
       {
         path: 'list',
         name: 'TeacherList',
         component: () => import('@/views/edu/teacher/list'),
-        meta: { title: '讲师列表' }
+        meta: { title: '讲师列表', icon: 'table' }
       },
       {
         path: 'create',
         name: 'TeacherCreate',
         component: () => import('@/views/edu/teacher/save'),
-        meta: { title: '添加讲师' }
+        meta: { title: '添加讲师', icon: 'tree' }
       },
       {
         path: 'edit/:id',
@@ -185,6 +185,29 @@ export const constantRouterMap = [
         component: () => import('@/views/edu/teacher/save'),
         meta: { title: '编辑讲师' },
         hidden: true
+      }
+    ]
+  },
+
+  // 课程分类管理
+  {
+    path: '/subject',
+    component: Layout,
+    redirect: '/subject/list',
+    name: 'Subject',
+    meta: { title: '课程分类管理', icon: 'example' },
+    children: [
+      {
+        path: 'list',
+        name: 'SubjectList',
+        component: () => import('@/views/edu/subject/list'),
+        meta: { title: '课程分类列表', icon: 'table' }
+      },
+      {
+        path: 'save',
+        name: 'SubjectSave',
+        component: () => import('@/views/edu/subject/save'),
+        meta: { title: '添加课程分类', icon: 'tree' }
       }
     ]
   },
