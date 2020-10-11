@@ -87,6 +87,9 @@ export default {
       this.init()
     }
   },
+  created() { // 页面渲染之前执行
+    this.init()
+  },
   methods: {
     close() { // 关闭上传弹框的方法
       this.imagecropperShow = false
